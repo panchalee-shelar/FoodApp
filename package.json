@@ -4,7 +4,9 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -15,9 +17,10 @@
   "bugs": {
     "url": "https://github.com/panchalee-shelar/React/issues"
   },
-  "homepage": "https://github.com/panchalee-shelar/React#readme",
+  "homepage": "https://github.com/panchalee-shelar/FoodApp.git",
   "description": "food-app",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel": "^2.15.2",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17"
