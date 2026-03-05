@@ -14,30 +14,25 @@ import Cart from "./Cart";
 import QuestionsSet from "./questions/QuestionsSet";
 
 
-const Grocery = lazy(()=> import('./Grocery.js'));
+const Grocery = lazy(()=> import('./Grocery'));
 // it create separate bundle of grocery. 
 
 const Layout = () => {
-    try {
-        const [userName, setUserName] = useState();
+    const [userName, setUserName] = useState();
 
-        useEffect(() => {
-            const data = { name: "Panchalee Shelar" };
-            setUserName(data.name);
-        }, []);
+    useEffect(() => {
+        const data = { name: "PS" };
+        setUserName(data.name);
+    }, []);
 
-        return (
-            <Provider store={appStore}>
-                <UserContext.Provider value={{ loggedIn: userName, setUserName }}>
-                    <Header />
-                    <Outlet />
-                </UserContext.Provider>
-            </Provider>
-        );
-    } catch (err) {
-        console.error("Error in Layout component:", err);
-        return <h1>Something went wrong in Layout</h1>;
-    }
+    return (
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedIn: userName, setUserName }}>
+                <Header />
+                <Outlet />
+            </UserContext.Provider>
+        </Provider>
+    );
 };
 
 
