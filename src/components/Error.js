@@ -6,7 +6,8 @@ const Error = ()=>{
         <>
             <h1>Ooops !</h1>
             <h4>Something went wrong..</h4>
-            <h4>{err.status}, {err.statusText}</h4>
+            {err?.status && <h4>{err.status}, {err.statusText}</h4>}
+            {err?.message && <h4>{err.message}</h4>}
         </>
     );
 };

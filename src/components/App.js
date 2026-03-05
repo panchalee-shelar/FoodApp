@@ -14,8 +14,12 @@ import Cart from "./Cart";
 import QuestionsSet from "./questions/QuestionsSet";
 
 
-const Grocery = lazy(()=> import('./Grocery'));
-// it create separate bundle of grocery. 
+const Grocery = lazy(()=> 
+    import('./Grocery').catch(err => {
+        console.error('Error loading Grocery:', err);
+        return { default: () => <div><h1>Failed to load Grocery</h1></div> };
+    })
+); 
 
 const Layout = () => {
     const [userName, setUserName] = useState();
