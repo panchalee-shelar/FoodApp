@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
@@ -12,7 +12,9 @@ import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./Cart";
 import QuestionsSet from "./questions/QuestionsSet";
-import Grocery from "./Grocery"; 
+import Shimmer from "./Shimmer";
+
+const Grocery = lazy(() => import('./Grocery')); 
 
 const Layout = () => {
     const [userName, setUserName] = useState();
@@ -58,7 +60,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/grocery',
-                element : <Grocery/>
+                element : <Suspense fallback={<div>Loading...</div>}><Grocery /></Suspense>
             },
             {
                 path:'/assignment',
