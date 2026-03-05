@@ -28,7 +28,7 @@ const Header = () => {
             <Link className="nav-link" to="/">Home</Link>
             <Link className="nav-link" to="/about">About</Link>
             <Link className="nav-link" to="/contact">Contact</Link>
-            <Link className="nav-link" to="/grocery">Grocery</Link>
+            <Link className="nav-link" reloadDocument={true} to="/grocery">Grocery</Link>
             <Link className="nav-link" to="/assignment">Assignment</Link>
             <Link className="nav-link" to="/cart">
               Cart ({cartItem.length})

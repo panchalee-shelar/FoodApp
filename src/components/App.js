@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import Body from "./Body";
@@ -12,14 +12,7 @@ import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./Cart";
 import QuestionsSet from "./questions/QuestionsSet";
-
-
-const Grocery = lazy(()=> 
-    import('./Grocery').catch(err => {
-        console.error('Error loading Grocery:', err);
-        return { default: () => <div><h1>Failed to load Grocery</h1></div> };
-    })
-); 
+import Grocery from "./Grocery"; 
 
 const Layout = () => {
     const [userName, setUserName] = useState();
@@ -65,7 +58,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/grocery',
-                element : <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>
+                element : <Grocery/>
             },
             {
                 path:'/assignment',
