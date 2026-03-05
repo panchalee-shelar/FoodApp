@@ -14,7 +14,7 @@ import Cart from "./Cart";
 import QuestionsSet from "./questions/QuestionsSet";
 
 
-const Grocery = lazy(()=> import('./Grocery'));
+const Grocery = lazy(()=> import('./Grocery.js'));
 // it create separate bundle of grocery. 
 
 const Layout = () => {
