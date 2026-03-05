@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom reusable classes */
+
+@layer components {
+  .nav-link {
+    @apply text-lg font-semibold hover:text-green-600 transition;
+  }
+
+  .mobile-link {
+    @apply block text-lg font-medium hover:text-green-600;
+  }
+}

@@ -1,0 +1,29 @@
+Class base components :
+- it use extends React.component
+- eg. class User extends React.Component(){
+	which is render method retur some jxs
+	render(
+		return(JSX)
+	);
+}
+
+- as we pass props in functional component likewise we pass props in class component but some syntax are changes
+	class UserClass extends React.Component(){
+		constructor(){super(props); console.log(props)}
+		render(
+			return(<h1>{this.props.name}</h1>)
+		)
+	}
+
+	other component (aboutus comp) were this class component is called like
+	<UserClass name:{'javascript'}/>
+
+- large scale applications (SAP - single page application like make my trip) were used bundle, in which we can load the data when user goes 
+	on that component that also called as code chunking, code splitting, on demand load or lazy loading which is reduce the loading 	performance on webpage.
+	In react we use bundle in grocery when user go to grocery tab then that component will load on page
+	syntax : const Grocery = lazy(()=>import(path of component like './component/grocery')) here import  is function
+	when user click on grocery , the all component data called & displaced , for displaying the data it take some time to load on page
+	this process happen so quickly so during that time it show error so to handle that error we use 'Suspense' which is component came 	from react. So to avoid error wrap the grocery component inside the Suspense component.
+
+- Context API => It is used to avoid props drilling, in function component to use context we have hook i.e. (useContex()) and in class component we use 'Consumer' e.g. const UserContext = createContext(); => class => <UserContext.Consumer></UserContext.Consumer> => function => const data = useContext(UserContext)
+	
