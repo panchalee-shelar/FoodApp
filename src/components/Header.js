@@ -29,7 +29,7 @@ const Header = () => {
             <Link className="nav-link" to="/about">About</Link>
             <Link className="nav-link" to="/contact">Contact</Link>
             <Link className="nav-link" reloadDocument={true} to="/grocery">Grocery</Link>
-            <Link className="nav-link" to="/assignment">Assignment</Link>
+            {/* <Link className="nav-link" to="/assignment">Assignment</Link> */}
             <Link className="nav-link" to="/cart">
               Cart ({cartItem.length})
             </Link>
@@ -67,7 +67,7 @@ const Header = () => {
           <Link className="mobile-link" to="/about" onClick={() => setIsOpen(false)}>About</Link>
           <Link className="mobile-link" to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
           <Link className="mobile-link" to="/grocery" onClick={() => setIsOpen(false)}>Grocery</Link>
-          <Link className="mobile-link" to="/assignment" onClick={() => setIsOpen(false)}>Assignment</Link>
+          {/* <Link className="mobile-link" to="/assignment" onClick={() => setIsOpen(false)}>Assignment</Link> */}
           <Link className="mobile-link" to="/cart" onClick={() => setIsOpen(false)}>
             Cart ({cartItem.length})
           </Link>

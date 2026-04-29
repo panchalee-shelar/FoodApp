@@ -42,7 +42,7 @@ const Body = () => {
   }
 
   if (onlinestatus === false) {
-    return <h1 className='text-2xl text-center'>Looks like you are Offline ! Please check your internet connection.</h1>
+    return <h1 className='text-2xlfont-bold text-center'>Looks like you are Offline ! Please check your internet connection.</h1>
   }
   return resto.length === 0 ? <Shimmer /> : (
     <>
